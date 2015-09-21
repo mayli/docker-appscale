@@ -10,8 +10,7 @@ RUN apt-get update\
 
 # Next, grab the main and tools branches from git
 # Use my docker branch until it gets merged into master.
-cd /root \
-  && git clone git://github.com/AppScale/appscale.git \
+RUN git clone git://github.com/AppScale/appscale.git \
   && git clone git://github.com/AppScale/appscale-tools /root/appscale-tools
 
 # Install main
