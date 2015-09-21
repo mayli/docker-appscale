@@ -5,7 +5,8 @@
 FROM ubuntu:precise
 
 # First, install git
-RUN apt-get install -y git-core
+RUN apt-get update\
+  && apt-get install -y git-core
 
 # Next, grab the main and tools branches from git
 # Use my docker branch until it gets merged into master.
