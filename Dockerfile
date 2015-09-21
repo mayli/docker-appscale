@@ -2,15 +2,16 @@
 #
 # VERSION 0.0.1
 
-FROM ubuntu
+FROM ubuntu:precise
 
 # First, install git
 RUN apt-get install -y git-core
 
 # Next, grab the main and tools branches from git
 # Use my docker branch until it gets merged into master.
-RUN git clone git://github.com/obino/appscale -b shatterednirvana-docker /root/appscale
-RUN git clone git://github.com/AppScale/appscale-tools /root/appscale-tools
+cd /root \
+  && git clone git://github.com/AppScale/appscale.git \
+  && git clone git://github.com/AppScale/appscale-tools /root/appscale-tools
 
 # Install main
 RUN bash /root/appscale/debian/appscale_build.sh
